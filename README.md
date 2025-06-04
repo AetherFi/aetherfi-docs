@@ -30,3 +30,5 @@ Kafka • Claude AI • Spring Boot • Pinecone • GitLab CI/CD • Terraform
 ```bash
 cd shadow-banker-cli
 ./query.sh "AAPL risk"
+
+![GitHub Pages](https://img.shields.io/website?url=https%3A%2F%aetherfi.github.io%2Faetherfi-docs)
