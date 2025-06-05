@@ -45,6 +45,7 @@ This document outlines the system's architecture, its migration journey from mon
 ### 📊 Milestone Roadmap
 
 ![Milestone Roadmap](./assets/aetherfi-milestones-roadmap.png)
+> A high-level view of AetherFi's technical phases, from audit trail setup through AI-powered FinTech agents.
 
 ---
 
@@ -88,6 +89,7 @@ This document outlines the system's architecture, its migration journey from mon
 ### 🔄 Kafka Streaming Flow
 
 ![Kafka Streaming Flow](./assets/aetherfi_streaming.png)
+> Shows how webhook events are pushed into Kafka, enriched via AI, and orchestrated across services for triage and Redis-based TTL caching.
 
 ---
 
@@ -101,6 +103,7 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - Automatically logs findings to Notion and notifies stakeholders via Slack.
 
 ![AetherFi AI Agent Orchestration](./assets/aetherfi-ai-agent_architecturev2.png)
+> Illustrates a full pipeline from GitLab webhook trigger → AI agent analysis → human-in-the-loop notification with Slack and GitLab integration.
 
 ---
 
@@ -123,14 +126,19 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - [`DI_OVERVIEW.md`](DI_OVERVIEW.md)
 - [`MILESTONES.md`](MILESTONES.md)
 
+---
+
 ### 📐 Architecture Visuals
 
+#### 🔁 Gateway + Redis Event Orchestration
+
 ![Vizier Gateway Architecture](./assets/aetherfi-vizier-arch.png)
+> A breakdown of Vizier's role in securely routing webhook traffic through Kong, pushing into Redis Streams, and invoking AI debugging logic downstream.
+
+#### 🧠 Full AI Agent System Flow
 
 ![Full AI Agent System Architecture](./assets/aetherfi-ai-agents-full-arch-diagram.png)
-
-
-For implementation details, see the private GitLab repository or contact the project maintainer.
+> Demonstrates the system-wide interaction of GitLab, AWS, Datadog, Notion, and Slack with various agents coordinating event-driven debugging.
 
 ---
 
