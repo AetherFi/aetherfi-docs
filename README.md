@@ -66,7 +66,7 @@
 
 📎 Full details: [Observability Guide](docs/OBSERVABILITY.md)
 
-![AetherFi Triage Panel](./assets/graphanaimage_aetherfi.png)
+![AetherFi Triage Panel](./docs/assets/graphanaimage_aetherfi.png)
 
 ---
 
