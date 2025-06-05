@@ -66,7 +66,12 @@
 
 📎 Full details: [Observability Guide](docs/OBSERVABILITY.md)
 
-![AetherFi Triage Panel](./docs/assets/graphanaimage_aetherfi.png)
+## 📊 Triage Dashboard (Mock Grafana)
+
+This simulated panel summarizes pipeline outcomes and response time across incidents.
+
+<img src="docs/assets/graphanaimage_aetherfi.png" alt="Grafana Mock Dashboard" width="30%" />
+
 
 ---
 
