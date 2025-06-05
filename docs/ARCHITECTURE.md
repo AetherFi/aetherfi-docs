@@ -125,7 +125,7 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 
 ### 📐 Architecture Visuals
 
-![Vizier Gateway Architecture](./assets/aetherfi-vizier-arch.png
+![Vizier Gateway Architecture](./assets/aetherfi-vizier-arch.png)
 
 ![Full AI Agent System Architecture](./assets/aetherfi-ai-agents-full-arch-diagram.png)
 
