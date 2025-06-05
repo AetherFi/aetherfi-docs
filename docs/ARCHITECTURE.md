@@ -122,7 +122,7 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 
 - [`PHASE1.md`](PHASE1.md)
 - [`AGENT.md`](AGENT.md)
-- [Flyway Migration Guide](./docs/Flyway_Migration_Guide.md) – Versioned DDL and schema lifecycle
+- [Flyway Migration Guide](Flyway_Migration_Guide.md) – Versioned DDL and schema lifecycle
 - [`DI_OVERVIEW.md`](DI_OVERVIEW.md)
 - [`MILESTONES.md`](MILESTONES.md)
 
