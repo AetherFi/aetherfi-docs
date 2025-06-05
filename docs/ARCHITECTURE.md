@@ -140,7 +140,8 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 
 #### 🧠 Full AI Agent System Flow
 
-![Full AI Agent System Architecture](./assets/aetherfi-ai-agents-full-arch-diagram.png)
+<img src="./assets/aetherfi-ai-agent_architecturev2.png" alt="Full System Architecture: GitLab + AWS → AI Agent Orchestration → Slack/Notion" width="800"/>
+
 > Demonstrates the system-wide interaction of GitLab, AWS, Datadog, Notion, and Slack with various agents coordinating event-driven debugging.
 
 ---
