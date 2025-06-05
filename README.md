@@ -1,103 +1,106 @@
-# AetherFi: AI-Native Fintech Debugging Platform
+# AetherFi — AI-Native Fintech Debugging Platform
 
-🧠 Overview
-AetherFi is an event-driven, multi-agent infrastructure platform that blends cloud-native microservices with AI-enhanced triage and fintech decision tooling.
-
-It automates observability and debugging across distributed systems using:
-
-Microservice orchestration (Spring Boot, Kafka, Redis)
-
-AI-driven retrieval (RAG, vector memory, LLM augmentation)
-
-CI/CD and Terraform-based infrastructure rollout
-
-🔒 Note: This is a public mirror for documentation and architectural transparency.
-The production codebase is private and hosted on GitLab with CI/CD deployments to AWS.
-
-🚀 Tech Stack
-<p align="center"> <img src="https://img.shields.io/badge/Java-21-blue.svg" alt="Java 21"/> <img src="https://img.shields.io/badge/Spring_Boot-3.2-brightgreen.svg" alt="Spring Boot 3.2"/> <img src="https://img.shields.io/badge/FastAPI-Python%203.11-blue.svg" alt="FastAPI Python 3.11"/> <img src="https://img.shields.io/badge/Kafka-Event_Bus-orange.svg" alt="Kafka Event Bus"/> <img src="https://img.shields.io/badge/PostgreSQL-Metadata-blue.svg" alt="PostgreSQL Metadata"/> <img src="https://img.shields.io/badge/Qdrant-VectorDB-red.svg" alt="Qdrant Vector DB"/> <img src="https://img.shields.io/badge/Terraform-Infrastructure-purple.svg" alt="Terraform Infra"/> <img src="https://img.shields.io/badge/Prometheus-Monitoring-orange.svg" alt="Prometheus Monitoring"/> <img src="https://img.shields.io/badge/Grafana-Dashboards-yellow.svg" alt="Grafana Dashboards"/> <img src="https://img.shields.io/badge/OAuth2-ZeroTrust-critical.svg" alt="OAuth2 Security"/> <img src="https://img.shields.io/badge/Codebase-Private-informational" alt="Private Repository"/> </p>
-
-🧩 Core Capabilities
-🔄 Webhook-to-Kafka triage flows
-
-🧠 AI memory recall via vector DB + RAG
-
-🔐 Secure multitenant observability with trace IDs
-
-📈 Grafana-style dashboards (mock + planned real)
-
-📦 Microservice modularity across Java + Python
-
-🛠️ FAANG-style Flyway migrations and DI structure
-
-## Architecture Overview
-- Ingress Layer: Kong Gateway, secured API ingress
-- Messaging Layer: Kafka Event Bus (partitioned + resilient)
-- Core API Layer: Vizier API (Spring Boot Java)
-- Agent Layer: Eidolon Agents (Python FastAPI)
-- Persistence Layer: PostgreSQL, Qdrant Vector Store
-- Observability Layer: Prometheus, Grafana
-- Security Layer: OAuth2, JWT, Secrets Management
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-blue.svg" />
+  <img src="https://img.shields.io/badge/Spring_Boot-3.2-brightgreen.svg" />
+  <img src="https://img.shields.io/badge/FastAPI-Python%203.11-blue.svg" />
+  <img src="https://img.shields.io/badge/Kafka-Event_Bus-orange.svg" />
+  <img src="https://img.shields.io/badge/PostgreSQL-Metadata-blue.svg" />
+  <img src="https://img.shields.io/badge/Qdrant-VectorDB-red.svg" />
+  <img src="https://img.shields.io/badge/Terraform-Infrastructure-purple.svg" />
+  <img src="https://img.shields.io/badge/Prometheus-Monitoring-orange.svg" />
+  <img src="https://img.shields.io/badge/Grafana-Dashboards-yellow.svg" />
+  <img src="https://img.shields.io/badge/OAuth2-ZeroTrust-critical.svg" />
+  <img src="https://img.shields.io/badge/Codebase-Private-informational.svg" />
+</p>
 
 ---
 
-## Project Goals
-- 🔥 Intelligent Debug-as-a-Service (DaaS) offering
-- 🔒 Zero Trust architecture
-- 📊 Observability-first design
-- 🛡️ Scalable, event-driven AI agent system
-- 📚 Phase 2: Fintech market analysis and Shadow Banker Terminal integration
+## 🧠 Overview
+
+**AetherFi** is a modular, event-driven platform for **AI-assisted DevOps debugging**, **risk triage**, and **FinTech intelligence automation**. It merges robust microservice architecture with retrieval-augmented AI workflows to reduce resolution time and improve infrastructure observability.
+
+> 🔒 This GitHub repo is a public mirror.  
+> Production codebase is hosted privately on GitLab and deployed to AWS via GitLab CI/CD.
 
 ---
 
-## 🧩 System Components
+## 🔍 What It Does
 
-- **Infra Layer**: GitLab CI ➔ Webhooks ➔ Java Orchestration
-- **Orchestration Layer**: Java Vizier (Spring Boot, Feign, Resilience4j)
-- **Agent Layer**: Python Eidolon (FastAPI, Retrieval-Augmented Memory)
-- **Memory Layer**: Qdrant Vector Store
-- **Observability Layer**: Distributed tracing, Tenant ID, Correlation ID
-
----
-
-## 🚀 Key Features
-
-- Event-driven service architecture
-- RAG (Retrieval-Augmented Generation) memory modules
-- Modular agent orchestration (fault-tolerant with fallback)
-- Secure API handling with OAuth2 roadmap
-- Multi-tenant ready design
-- Future FinTech AI integration (ShadowBanker Terminal)
+- 🔄 Webhook-to-Kafka async triage flows
+- 🧠 AI memory recall with RAG + VectorDB (Qdrant)
+- 🔐 Multitenant observability with correlation + trace ID
+- 🛠️ FAANG-grade DI, Flyway migrations, Terraform IaC
+- 📈 Dashboards: Prometheus + Grafana (mocked + planned)
 
 ---
 
-## 📈 Roadmap
+## 🧩 System Architecture
 
-- ✅ End-to-End webhook ingestion demo
-- 🚧 Launch Eidolon agent RAG service
-- 🚧 Multi-tenant memory orchestration (Qdrant + Postgres meta)
-- 🚧 FinTech extension module (Risk and Sentiment Analysis)
-- 🚧 Observability integration (Grafana, Prometheus)
+<details>
+<summary><strong>Expand: Technical Layers</strong></summary>
 
----
+### System Components
 
-## Documentation
-- [📅 Project Milestones](docs/MILESTONES.md)
-- [📐 System Architecture](docs/ARCHITECTURE.md)
-- [System Design Overview](./docs/system_design.md)
-- [🧱 Dependency Injection Overview](docs/DI_OVERVIEW.md)
-- [🗃️ Flyway Migration Guide](docs/FLYWAY_MIGRATIONS.md)
-- [Architecture Diagram](./diagrams/aetherfi_architecture.svg)
-- [Feature Roadmap](./FEATURE_ROADMAP.md)
-- [Tech Stack Details](./TECH_STACK.md)
-- [SDLC Plan](./SDLC_PLAN.md)
+| Layer              | Description                                                |
+|-------------------|------------------------------------------------------------|
+| **Infra**         | GitLab CI → Secure Webhook Ingest                          |
+| **Orchestration** | Java-based Vizier Orchestrator (Spring Boot, Resilience4j) |
+| **Agent Layer**   | Python-based Eidolon AI Agent (FastAPI, OpenAI, Claude)    |
+| **Memory Layer**  | Vector Search (Qdrant) + future metadata store (Postgres)  |
+| **Observability** | Prometheus, Grafana, OTel Tracing, Slack + Notion output   |
+| **Security**      | OAuth2, Zero Trust, Tenant Isolation                       |
 
----
+📌 See [System Architecture](docs/ARCHITECTURE.md)
 
-## Status
-🔵 Actively in development — first live end-to-end webhook test milestone achieved.
+</details>
 
 ---
 
+## 🗺 Roadmap
 
+| Milestone                          | Status     |
+|-----------------------------------|------------|
+| ✅ Webhook ingestion demo (E2E)    | Complete   |
+| 🚧 Eidolon RAG agent launch        | In Progress|
+| 🚧 Qdrant + Postgres orchestration | In Progress|
+| 🚧 FinTech CLI (ShadowBanker)      | Planned    |
+| 🚧 Observability integrations      | Planned    |
 
+📌 See [Project Milestones](docs/MILESTONES.md)
+
+---
+
+## 🔧 Project Goals
+
+- Build a **Debug-as-a-Service** (DaaS) FinTech platform
+- Enforce **Zero Trust + Secrets Rotation**
+- Deliver **Graph-augmented AI memory tools**
+- Achieve **modular scale across microservices**
+
+---
+
+## 📚 Deep Dives
+
+- 📐 [System Architecture](docs/ARCHITECTURE.md)
+- 🧱 [Dependency Injection Overview](docs/DI_OVERVIEW.md)
+- 🗃️ [Flyway Migration Guide](docs/MIGRATIONS.md)
+- 🧪 [E2E Test Architecture](docs/TESTING.md)
+- 🧭 [SDLC Plan](docs/SDLC_PLAN.md)
+
+---
+
+## 📊 Status
+
+> 🚧 **Active Development**  
+> ✅ End-to-end webhook ingestion tested  
+> 📎 Logs, mock dashboards, and architecture docs available
+
+---
+
+## 🤝 Want to Collaborate or Demo?
+
+> 💬 Contact for demo access to private GitLab or live dashboard views.
+> AI agents available for Slack/Notion observability output.
+
+---
