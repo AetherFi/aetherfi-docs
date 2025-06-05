@@ -44,7 +44,7 @@ This document outlines the system's architecture, its migration journey from mon
 
 ### 📊 Milestone Roadmap
 
-![Milestone Roadmap](./assets/aetherfi-milestones-roadmap.png)
+<img src="./assets/aetherfi-milestones-roadmap.png" alt="Milestone Roadmap" width="40%" />
 > A high-level view of AetherFi's technical phases, from audit trail setup through AI-powered FinTech agents.
 
 ---
@@ -88,7 +88,7 @@ This document outlines the system's architecture, its migration journey from mon
 
 ### 🔄 Kafka Streaming Flow
 
-![Kafka Streaming Flow](./assets/aetherfi_streaming.png)
+<img src="./assets/aetherfi_streaming.png" alt="Kafka Streaming Flow" width="50%" />
 > Shows how webhook events are pushed into Kafka, enriched via AI, and orchestrated across services for triage and Redis-based TTL caching.
 
 ---
@@ -101,8 +101,8 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - Cross-references historical patterns using vector memory (Qdrant).
 - Proposes resolutions with traceable justifications.
 - Automatically logs findings to Notion and notifies stakeholders via Slack.
-
-![AetherFi AI Agent Orchestration](./assets/aetherfi-ai-agent_architecturev2.png)
+  
+<img src="./assets/aetherfi-ai-agent_architecturev2.png" alt="AetherFi AI Agent Orchestration" width="50%" />
 > Illustrates a full pipeline from GitLab webhook trigger → AI agent analysis → human-in-the-loop notification with Slack and GitLab integration.
 
 ---
@@ -132,8 +132,11 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 
 #### 🔁 Gateway + Redis Event Orchestration
 
-![Vizier Gateway Architecture](./assets/aetherfi-vizier-arch.png)
-> A breakdown of Vizier's role in securely routing webhook traffic through Kong, pushing into Redis Streams, and invoking AI debugging logic downstream.
+<img src="./assets/aetherfi-vizier-arch.png" alt="Webhook Controller Flow: Evaluator vs Kafka Triage Path" width="350"/>
+
+> 🔀 This diagram illustrates AetherFi’s dual-path webhook routing: simple evaluable events are resolved via Redis/Evaluator; complex ones are escalated to Kafka and routed to AI Orchestrators. Designed for modular fallback, async retries, and low-latency responses.
+
+--- 
 
 #### 🧠 Full AI Agent System Flow
 
