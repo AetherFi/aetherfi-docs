@@ -71,8 +71,11 @@ curl -X POST http://localhost:8081/webhook/gitlab \
   -d '{ "object_kind": "pipeline", "object_attributes": { "status": "success" }}'
 ```
 
-📸 Dashboard & Alerts
-📊 Grafana-style Dashboard (Mock)
+## 📊 Triage Dashboard (Mock Grafana)
+
+This simulated panel summarizes pipeline outcomes and response time across incidents.
+
+<img src="./assets/graphanaimage_aetherfi.png" alt="Grafana Mock Dashboard" width="70%" />
 
 This mocked dashboard shows:
 
@@ -84,22 +87,26 @@ This mocked dashboard shows:
 
 🔁 Annotated logs with AI-explained root causes
 ---
-## 🗃️ Notion Logging
 
-AI agents log incident summaries and metadata into a centralized Notion database for future triage and RAG memory use.
+The AI agent sends alerts with issue context and a link to the Notion ticket.
 
-![Notion Incident Record - GitLab Pipeline Failure](./assets/notion_incident_failure.jpg)
----
-Real-time triage records are auto-logged by the AI agent, including severity, source, and summary.
----
 ## 🔔 Slack Integration
 
 Each pipeline failure triggers a Slack notification via the AI agent, formatted with critical metadata and Notion links.
 
-![Slack Alert - AI Agent Response to GitLab Pipeline Failure](./assets/slack_alert_pipeline_failure.jpg)
+<img src="./assets/slack_alert_pipeline_failure.jpg" alt="Slack Alert - AI Agent Response" width="50%" />
+
 ---
 
-The AI agent sends alerts with issue context and a link to the Notion ticket.
+## 🗃️ Notion Logging
+
+AI agents log incident summaries and metadata into a centralized Notion database for future triage and RAG memory use.
+
+<img src="./assets/notion_incident_failure.jpg" alt="Notion Incident Record - GitLab Pipeline Failure" width="50%" />
+
+---
+
+
 
 ### ✅ Unit Test Coverage
 
@@ -108,18 +115,13 @@ The AI agent sends alerts with issue context and a link to the Notion ticket.
 | Filter        | Correlation injection + cleanup     | `CorrelationContextFilterTest` |
 | Controller    | Webhook parsing & DTO validation    | `WebhookControllerTest`        |
 | Service       | Triage orchestration + fallback     | `OrchestrationServiceTest`     |
-| Feign Client 
+| Feign Client  | Header propagation                  | `FeignClientConfigTest`        |
 
-📍 Next Steps
- Add Swagger global header config
 
- Add Notion + Slack fallback writers
+---
+ 
 
- Apply MDC tracing to RAG agents
-
- Cloud export for log search via Grafana/Loki
-
-"We don’t just log errors — we trace intent across every layer of the system."
+> 🔭 **Observability Insight**: We don’t just log errors — we emit structured, correlation-aware JSON logs and broadcast AI-tagged root causes to Notion and Slack.
 
 
 
