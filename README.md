@@ -1,34 +1,42 @@
+CopyEdit
+# AetherFi: AI-Native Fintech Debugging Platform 🚀
 
-# AetherFi
+## Overview
+AetherFi is an event-driven, AI-augmented infrastructure designed for cloud DevOps debugging, risk triage, and future fintech intelligence modules.
 
-> “Most CI/CD tools react. AetherFi predicts.”
+It blends cloud-native engineering (Kafka, Spring Boot, FastAPI) with emerging AI workflows (RAG, vector search) to automate triage and future decision support.
 
-AetherFi is an AI-augmented debugging platform that reduces incident resolution time by 70% through multi-agent triage, Kafka-driven event flow, and zero-trust infrastructure.
+---
 
-## 📂 Why AetherFi?
-See: [`docs/why_aetherfi.md`](./docs/why_aetherfi.md)
+## Architecture Overview
+- Ingress Layer: Kong Gateway, secured API ingress
+- Messaging Layer: Kafka Event Bus (partitioned + resilient)
+- Core API Layer: Vizier API (Spring Boot Java)
+- Agent Layer: Eidolon Agents (Python FastAPI)
+- Persistence Layer: PostgreSQL, Qdrant Vector Store
+- Observability Layer: Prometheus, Grafana
+- Security Layer: OAuth2, JWT, Secrets Management
 
-## 🧠 Architecture
-![Architecture Diagram](./diagrams/architecture.png)
+---
 
-See:
-- [`docs/01-monolith-overview.md`](./docs/01-monolith-overview.md)
-- [`docs/02-microservice-architecture.md`](./docs/02-microservice-architecture.md)
-- [`docs/03-agent-design.md`](./docs/03-agent-design.md)
+## Project Goals
+- 🔥 Intelligent Debug-as-a-Service (DaaS) offering
+- 🔒 Zero Trust architecture
+- 📊 Observability-first design
+- 🛡️ Scalable, event-driven AI agent system
+- 📚 Phase 2: Fintech market analysis and Shadow Banker Terminal integration
 
-## 🚀 Impact
-- 70% reduction in CI/CD incident resolution
-- Saved 15+ eng hours/week
-- Zero-downtime Terraform rollouts
+---
 
-See: [`docs/impact.md`](./docs/impact.md)
+## Documentation
+- [System Design Overview](./docs/system_design.md)
+- [Architecture Diagram](./diagrams/aetherfi_architecture.svg)
+- [Feature Roadmap](./FEATURE_ROADMAP.md)
+- [Tech Stack Details](./TECH_STACK.md)
 
-## 🛠️ Triage Stack
-Kafka • Claude AI • Spring Boot • Pinecone • GitLab CI/CD • Terraform
+---
 
-## 🧪 Prototype: Shadow Banker CLI
-```bash
-cd shadow-banker-cli
-./query.sh "AAPL risk"
+## Status
+🔵 Actively in development — first live end-to-end webhook test milestone achieved.
 
-![GitHub Pages](https://img.shields.io/website?url=https%3A%2F%aetherfi.github.io%2Faetherfi-docs)
+---
