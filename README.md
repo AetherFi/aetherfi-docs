@@ -57,6 +57,19 @@
 
 ---
 
+## 🔭 Observability Highlights
+
+- 🧠 Correlation ID tracing across Java + Python via MDC/contextvars
+- 🔁 Kafka replay for event debugging
+- 🛡️ Circuit breaker fallbacks with enriched error messages
+- 🖥️ Dashboards: Grafana mockup + Notion/Slack alert integrations
+
+📎 Full details: [Observability Guide](docs/OBSERVABILITY.md)
+
+![AetherFi Triage Panel](./assets/graphanaimage_aetherfi.png)
+
+---
+
 ## 🗺 Roadmap
 
 | Milestone                          | Status     |
