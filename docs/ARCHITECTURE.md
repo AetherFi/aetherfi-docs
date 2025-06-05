@@ -87,7 +87,7 @@ This document outlines the system's architecture, its migration journey from mon
 
 ### 🔄 Kafka Streaming Flow
 
-![Kafka Streaming Flow](./assets/streaming.png)
+![Kafka Streaming Flow](./assets/aetherfi_streaming.png)
 
 ---
 
@@ -99,6 +99,8 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - Cross-references historical patterns using vector memory (Qdrant).
 - Proposes resolutions with traceable justifications.
 - Automatically logs findings to Notion and notifies stakeholders via Slack.
+
+![AetherFi AI Agent Orchestration](./assets/aetherfi-ai-agent_architecturev2.png)
 
 ---
 
@@ -123,7 +125,10 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 
 ### 📐 Architecture Visuals
 
-![Vizier Gateway Architecture](./assets/aetherfi-vizier-arch.png)
+![Vizier Gateway Architecture](./assets/aetherfi-vizier-arch.png
+
+![Full AI Agent System Architecture](./assets/aetherfi-ai-agents-full-arch-diagram.png)
+
 
 For implementation details, see the private GitLab repository or contact the project maintainer.
 
