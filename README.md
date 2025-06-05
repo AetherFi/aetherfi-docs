@@ -1,4 +1,3 @@
-CopyEdit
 # AetherFi: AI-Native Fintech Debugging Platform 🚀
 
 ## Overview
