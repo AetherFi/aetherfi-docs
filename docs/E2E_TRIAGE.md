@@ -12,7 +12,7 @@ This document outlines the first complete, production-style end-to-end triage fl
 
 ## 🔗 Sequence Diagram
 
-![Sequence Diagram](./docs/assets/e2e-triage-sequence.png)
+![Sequence Diagram](./assets/e2e-triage-sequence.png)
 
 ---
 
