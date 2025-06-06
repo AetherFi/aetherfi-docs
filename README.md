@@ -85,7 +85,7 @@ This simulated panel summarizes pipeline outcomes and response time across incid
 | 🚧 FinTech CLI (ShadowBanker)      | Planned    |
 | 🚧 Observability integrations      | Planned    |
 
-📌 See [Project Milestones](docs/MILESTONES.md)
+📌 See [Project Milestones](docs/E2E_TRIAGE.md)
 
 ---
 
