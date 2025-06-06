@@ -38,22 +38,23 @@
 ## 🧩 System Architecture
 
 <details>
-<summary><strong>Expand: Technical Layers</strong></summary>
+<summary><strong>🔽 View Technical Stack</strong></summary>
 
-### System Components
+#### 📚 System Component Breakdown
 
-| Layer              | Description                                                |
-|-------------------|------------------------------------------------------------|
-| **Infra**         | GitLab CI → Secure Webhook Ingest                          |
-| **Orchestration** | Java-based Vizier Orchestrator (Spring Boot, Resilience4j) |
-| **Agent Layer**   | Python-based Eidolon AI Agent (FastAPI, OpenAI, Claude)    |
-| **Memory Layer**  | Vector Search (Qdrant) + future metadata store (Postgres)  |
-| **Observability** | Prometheus, Grafana, OTel Tracing, Slack + Notion output   |
-| **Security**      | OAuth2, Zero Trust, Tenant Isolation                       |
+| Layer              | Description                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| **Infra**         | Terraform-managed AWS stack (ECS, Route 53, S3, CloudWatch); GitLab CI      |
+| **Orchestration** | Java-based Vizier Orchestrator (Spring Boot, Resilience4j)                  |
+| **Agent Layer**   | Python-based Eidolon AI Agent (FastAPI, OpenAI, Claude)                     |
+| **Memory Layer**  | Vector Search (Qdrant) + future metadata store (Postgres)                   |
+| **Observability** | Prometheus, Grafana, OTel Tracing, Slack + Notion output                    |
+| **Security**      | OAuth2, Zero Trust, Tenant Isolation, AWS Secrets Manager (planned)         |
 
-📌 See [System Architecture](docs/ARCHITECTURE.md)
+📌 See full [System Architecture](docs/ARCHITECTURE.md)
 
 </details>
+
 
 ---
 
