@@ -7,6 +7,7 @@
   <img src="https://img.shields.io/badge/Kafka-Event_Bus-orange.svg" />
   <img src="https://img.shields.io/badge/PostgreSQL-Metadata-blue.svg" />
   <img src="https://img.shields.io/badge/Qdrant-VectorDB-red.svg" />
+  <img src="https://img.shields.io/badge/Datalake-ETL-grey.svg" />
   <img src="https://img.shields.io/badge/Terraform-Infrastructure-purple.svg" />
   <img src="https://img.shields.io/badge/Prometheus-Monitoring-orange.svg" />
   <img src="https://img.shields.io/badge/Grafana-Dashboards-yellow.svg" />
@@ -20,18 +21,20 @@
 
 **AetherFi** is a modular, event-driven platform for **AI-assisted DevOps debugging**, **risk triage**, and **FinTech intelligence automation**. It merges robust microservice architecture with retrieval-augmented AI workflows to reduce resolution time and improve infrastructure observability.
 
-> 🔒 This GitHub repo is a public mirror.  
+> 🔒 This GitHub repo is a public mirror.
 > Production codebase is hosted privately on GitLab and deployed to AWS via GitLab CI/CD.
 
 ---
 
 ## 🔍 What It Does
 
-- 🔄 Webhook-to-Kafka async triage flows
-- 🧠 AI memory recall with RAG + VectorDB (Qdrant)
-- 🔐 Multitenant observability with correlation + trace ID
-- 🛠️ FAANG-grade DI, Flyway migrations, Terraform IaC
-- 📈 Dashboards: Prometheus + Grafana (mocked + planned)
+* 🔄 Webhook-to-Kafka async triage flows
+* 🧠 AI memory recall with RAG + VectorDB (Qdrant)
+* 🧪 RAR (retrieval-augmented reasoning) experimental workflows (planned)
+* 🔐 Multitenant observability with correlation + trace ID
+* 🛠️ FAANG-grade DI, Flyway migrations, Terraform IaC
+* 📈 Dashboards: Prometheus + Grafana (mocked + planned)
+* 💾 Planned: Datalake ingestion and ETL pipeline for future self-hosted memory
 
 ---
 
@@ -42,28 +45,27 @@
 
 #### 📚 System Component Breakdown
 
-| Layer              | Description                                                                 |
-|-------------------|-----------------------------------------------------------------------------|
-| **Infra**         | Terraform-managed AWS stack (ECS, Route 53, S3, CloudWatch); GitLab CI      |
-| **Orchestration** | Java-based Vizier Orchestrator (Spring Boot, Resilience4j)                  |
-| **Agent Layer**   | Python-based Eidolon AI Agent (FastAPI, OpenAI, Claude)                     |
-| **Memory Layer**  | Vector Search (Qdrant) + future metadata store (Postgres)                   |
-| **Observability** | Prometheus, Grafana, OTel Tracing, Slack + Notion output                    |
-| **Security**      | OAuth2, Zero Trust, Tenant Isolation, AWS Secrets Manager (planned)         |
+| Layer             | Description                                                             |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Infra**         | Terraform-managed AWS stack (ECS, Route 53, S3, CloudWatch); GitLab CI  |
+| **Orchestration** | Java-based Vizier Orchestrator (Spring Boot, Resilience4j)              |
+| **Agent Layer**   | Python-based Eidolon AI Agent (FastAPI, OpenAI, Claude)                 |
+| **Memory Layer**  | Vector Search (Qdrant) + metadata store (Postgres) + Datalake (planned) |
+| **Observability** | Prometheus, Grafana, OTel Tracing, Slack + Notion output                |
+| **Security**      | OAuth2, Zero Trust, Tenant Isolation, AWS Secrets Manager (planned)     |
 
 📌 See full [System Architecture](docs/ARCHITECTURE.md)
 
 </details>
 
-
 ---
 
 ## 🔭 Observability Highlights
 
-- 🧠 Correlation ID tracing across Java + Python via MDC/contextvars
-- 🔁 Kafka replay for event debugging
-- 🛡️ Circuit breaker fallbacks with enriched error messages
-- 🖥️ Dashboards: Grafana mockup + Notion/Slack alert integrations
+* 🧠 Correlation ID tracing across Java + Python via MDC/contextvars
+* 🔁 Kafka replay for event debugging
+* 🛡️ Circuit breaker fallbacks with enriched error messages
+* 🖥️ Dashboards: Grafana mockup + Notion/Slack alert integrations
 
 📎 Full details: [Observability Guide](docs/OBSERVABILITY.md)
 
@@ -73,18 +75,19 @@ This simulated panel summarizes pipeline outcomes and response time across incid
 
 <img src="docs/assets/graphanaimage_aetherfi.png" alt="Grafana Mock Dashboard" width="30%" />
 
-
 ---
 
 ## 🗺 Roadmap
 
-| Milestone                          | Status     |
-|-----------------------------------|------------|
-| ✅ Webhook ingestion demo (E2E)    | Complete   |
-| 🚧 Eidolon RAG agent launch        | In Progress|
-| 🚧 Qdrant + Postgres orchestration | In Progress|
-| 🚧 FinTech CLI (ShadowBanker)      | Planned    |
-| 🚧 Observability integrations      | Planned    |
+| Milestone                          | Status      |
+| ---------------------------------- | ----------- |
+| ✅ Webhook ingestion demo (E2E)     | Complete    |
+| 🚧 Eidolon RAG agent launch        | In Progress |
+| 🚧 Qdrant + Postgres orchestration | In Progress |
+| 🚧 RAR inference loop (pilot)      | Planned     |
+| 🚧 ETL + Datalake pipeline         | Planned     |
+| 🚧 FinTech CLI (ShadowBanker)      | Planned     |
+| 🚧 Observability integrations      | Planned     |
 
 📌 See [Project Milestones](docs/E2E_TRIAGE.md)
 
@@ -92,27 +95,29 @@ This simulated panel summarizes pipeline outcomes and response time across incid
 
 ## 🔧 Project Goals
 
-- Build a **Debug-as-a-Service** (DaaS) FinTech platform
-- Enforce **Zero Trust + Secrets Rotation**
-- Deliver **Graph-augmented AI memory tools**
-- Achieve **modular scale across microservices**
+* Build a **Debug-as-a-Service** (DaaS) FinTech platform
+* Enforce **Zero Trust + Secrets Rotation**
+* Deliver **Graph-augmented AI memory tools**
+* Prototype **RAR (Retrieval-Augmented Reasoning)** agents
+* Implement **Datalake + ETL** to power continuous ingest workflows
+* Achieve **modular scale across microservices**
 
 ---
 
 ## 📚 Deep Dives
 
-- 📐 [System Architecture](docs/ARCHITECTURE.md)
-- 🧱 [Dependency Injection Overview](docs/DI_OVERVIEW.md)
-- 🗃️ [Flyway Migration Guide](docs/MIGRATIONS.md)
-- 🧪 [E2E Test Architecture](docs/TESTING.md)
-- 🧭 [SDLC Plan](docs/SDLC_PLAN.md)
+* 📐 [System Architecture](docs/ARCHITECTURE.md)
+* 🧱 [Dependency Injection Overview](docs/DI_OVERVIEW.md)
+* 🗃️ [Flyway Migration Guide](docs/MIGRATIONS.md)
+* 🧪 [E2E Test Architecture](docs/TESTING.md)
+* 🧭 [SDLC Plan](docs/SDLC_PLAN.md)
 
 ---
 
 ## 📊 Status
 
-> 🚧 **Active Development**  
-> ✅ End-to-end webhook ingestion tested  
+> 🚧 **Active Development**
+> ✅ End-to-end webhook ingestion tested
 > 📎 Logs, mock dashboards, and architecture docs available
 
 ---
