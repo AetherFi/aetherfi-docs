@@ -49,8 +49,7 @@ This design prioritizes **auditability, low-latency resolution**, and **human-in
 
 ## 🧩 System Architecture
 
-<details>
-<summary><strong>🔽 View Technical Stack</strong></summary>
+<summary><strong>Technical Stack</strong></summary>
 
 #### 📚 System Component Breakdown
 
@@ -61,11 +60,10 @@ This design prioritizes **auditability, low-latency resolution**, and **human-in
 | **Agent Layer**   | Python-based Eidolon AI Agent (FastAPI, OpenAI, Claude)                 |
 | **Memory Layer**  | Vector Search (Qdrant) + metadata store (Postgres) + Datalake (planned) |
 | **Observability** | Prometheus, Grafana, OTel Tracing, Slack + Notion output                |
-| **Security**      | OAuth2, Zero Trust, Tenant Isolation, AWS Secrets Manager (planned)     |
+| **Security**      | OAuth2, Zero Trust, IAM Roles, Secrets Manager (planned), Jira escalation 🔜     |
 
 📌 See full [System Architecture](docs/ARCHITECTURE.md)
 
-</details>
 
 ---
 
@@ -110,6 +108,9 @@ This simulated panel summarizes pipeline outcomes and response time across incid
 * Prototype **RAR (Retrieval-Augmented Reasoning)** agents
 * Implement **Datalake + ETL** to power continuous ingest workflows
 * Achieve **modular scale across microservices**
+* Implement RAGOps patterns (prompt tracing, vector metrics, feedback recall)
+* Scale from RAG → RAR via Slack feedback + prompt routing
+* Replace Notion with Jira for advanced issue lifecycle management
 
 ---
 
@@ -120,6 +121,8 @@ This simulated panel summarizes pipeline outcomes and response time across incid
 * 🗃️ [Flyway Migration Guide](docs/MIGRATIONS.md)
 * 🧪 [E2E Test Architecture](docs/TESTING.md)
 * 🧭 [SDLC Plan](docs/SDLC_PLAN.md)
+* 📘 RAGOps Overview
+* 🧩 Datalake Vision
 
 ---
 
