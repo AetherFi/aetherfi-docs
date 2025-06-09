@@ -69,29 +69,22 @@ This document outlines the system's architecture, its migration journey from mon
 - Vector search over historical failures, PDFs, and architecture recaps.
 - Enables RAG-powered, context-aware debugging.
 
----
-
 ### `eidolon-datalake` (Planned)
 - Stores raw, semi-structured data: HTML chat exports, logs, financial filings, web-scraped sources.
 - Acts as a long-term archive to support future enrichment and ETL pipelines.
 - Integrated with RAG as a secondary retrieval source post-curation.
 
----
-
 ### `etl-pipeline` (Planned)
 - Ingests data from the datalake into Qdrant or Postgres.
 - Handles chunking, embedding, deduplication, and tagging.
-- Planned to be modular: each source (HTML, Slack threads, web) has a dedicated ingestion module.
-
---- 
+- Planned to be modular: each source (HTML, Slack threads, web) has a dedicated ingestion module. 
 
 ### `jira-integration` (Planned)
 - Supports escalated incidents with structured ticket creation and lifecycle tracking.
-- Will replace or complement Notion for enterprise clients.
+- Future replacement for Notion.
 - Uses JIRA REST API for bidirectional updates (AI triage → JIRA ticket → resolved PR/commit status).
 
 ---
-
 
 ## 🔒 Security & Reliability
 
@@ -107,6 +100,7 @@ This document outlines the system's architecture, its migration journey from mon
 - **Correlation ID Propagation**: Consistent request tracking across services.
 - **Kafka Replay Setup**: Docker Compose for re-ingesting real events.
 - **Dashboards**: WIP Grafana + Notion boards.
+- **RAGOps observability**: trace prompt lineage, Slack feedback cycles, and vector hit/miss rates (planned)
 
 ### 🔄 Kafka Streaming Flow
 
@@ -123,8 +117,17 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - Cross-references historical patterns using vector memory (Qdrant) and structured documents extracted from a raw datalake. Future support for Retrieval-Augmented Reasoning (RAR) enables the agent to build reasoning trees across retrieved knowledge chunks.
 - Proposes resolutions with traceable justifications.
 - Automatically logs findings to Notion and notifies stakeholders via Slack.
+
+### 🧠 RAG vs RAR
+
+The architecture supports both:
+
+- **RAG (Retrieval-Augmented Generation)**: Enables fast memory lookups by retrieving the most relevant document chunks and embedding them directly into the LLM prompt.
   
-  
+- **RAR (Retrieval-Augmented Reasoning)**: Enhances insight quality by retrieving multiple related chunks, detecting contradictions, and prompting the LLM to reason across sources to explain root causes.
+
+This dual-mode design allows AetherFi to balance speed with depth, supporting both instant answers and nuanced, human-grade debugging insights.
+
 <img src="./assets/aetherfi-ai-agent_architecturev2.png" alt="AetherFi AI Agent Orchestration" width="50%" />
 > Illustrates a full pipeline from GitLab webhook trigger → AI agent analysis → human-in-the-loop notification with Slack and GitLab integration.
 
