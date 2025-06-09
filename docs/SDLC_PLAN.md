@@ -79,16 +79,6 @@ Each sprint results in:
 | `docs/MILESTONES.md`    | Feature roadmap + progress                      |
 | `docs/SDLC_PLAN.md`     | This doc — full lifecycle and planning strategy |
 
----
-
-## 🤝 External Alignment (Hiring, Portfolios, Investors)
-
-You can speak to:
-
-* Event-driven platform architecture
-* Terraform IaC with GitLab CI/CD and OIDC IAM security
-* Structured memory and retrieval via Qdrant + Postgres
-* Multi-agent coordination (Eidolon, Vizier, Shadow Banker)
 
 ---
 
