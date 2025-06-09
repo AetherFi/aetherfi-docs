@@ -71,6 +71,28 @@ This document outlines the system's architecture, its migration journey from mon
 
 ---
 
+### `eidolon-datalake` (Planned)
+- Stores raw, semi-structured data: HTML chat exports, logs, financial filings, web-scraped sources.
+- Acts as a long-term archive to support future enrichment and ETL pipelines.
+- Integrated with RAG as a secondary retrieval source post-curation.
+
+---
+
+### `etl-pipeline` (Planned)
+- Ingests data from the datalake into Qdrant or Postgres.
+- Handles chunking, embedding, deduplication, and tagging.
+- Planned to be modular: each source (HTML, Slack threads, web) has a dedicated ingestion module.
+
+--- 
+
+### `jira-integration` (Planned)
+- Supports escalated incidents with structured ticket creation and lifecycle tracking.
+- Will replace or complement Notion for enterprise clients.
+- Uses JIRA REST API for bidirectional updates (AI triage → JIRA ticket → resolved PR/commit status).
+
+---
+
+
 ## 🔒 Security & Reliability
 
 - **OIDC Auth**: Federated access using GitLab & AWS IAM.
@@ -98,9 +120,10 @@ This document outlines the system's architecture, its migration journey from mon
 AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and FinTech:
 
 - Ingests logs, CI/CD results, and cloud metrics.
-- Cross-references historical patterns using vector memory (Qdrant).
+- Cross-references historical patterns using vector memory (Qdrant) and structured documents extracted from a raw datalake. Future support for Retrieval-Augmented Reasoning (RAR) enables the agent to build reasoning trees across retrieved knowledge chunks.
 - Proposes resolutions with traceable justifications.
 - Automatically logs findings to Notion and notifies stakeholders via Slack.
+  
   
 <img src="./assets/aetherfi-ai-agent_architecturev2.png" alt="AetherFi AI Agent Orchestration" width="50%" />
 > Illustrates a full pipeline from GitLab webhook trigger → AI agent analysis → human-in-the-loop notification with Slack and GitLab integration.
@@ -114,6 +137,10 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - 🧠 RAG Memory Integration (Qdrant, Claude)
 - 🧪 Secure Multi-Tenant Orchestration
 - 🔔 Slack/Notion Automation
+- 🪵 Datalake Ingestion Module (HTML, Slack, Web Scrapes)
+- 🔄 ETL Service → Embedding into Qdrant/Postgres
+- 🔍 RAR Prototype: Reasoning agent w/ evidence traces
+
 - 🌐 Public Demo Deployment
 
 ---
@@ -124,6 +151,9 @@ AetherFi’s long-term goal is to evolve into a true AI teammate for DevOps and 
 - [`Flyway Migration Guide`](Flyway_Migration_Guide.md) – Versioned DDL and schema lifecycle
 - [`Dependency Injection Overview`](DI_OVERVIEW.md)
 - [`MILESTONES.md`](E2E_TRIAGE.md)
+- [`ETL_Pipeline.md`](ETL_Pipeline.md) — WIP plan for ingestion, tagging, and chunking from raw datalake to vector + metadata storage.
+- [`DataLake_Vision.md`](DataLake_Vision.md) — Motivation and use cases for long-term unstructured storage.
+
 
 ---
 
