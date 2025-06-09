@@ -21,8 +21,17 @@
 
 **AetherFi** is a modular, event-driven platform for **AI-assisted DevOps debugging**, **risk triage**, and **FinTech intelligence automation**. It merges robust microservice architecture with retrieval-augmented AI workflows to reduce resolution time and improve infrastructure observability.
 
-> 🔒 This GitHub repo is a public mirror.
+> 🔒 This GitHub repo is a public mirror.  
 > Production codebase is hosted privately on GitLab and deployed to AWS via GitLab CI/CD.
+
+As part of AetherFi, we’ve developed **Eidolon** — a retrieval-native AI agent responsible for memory, inference, and human feedback loops. Eidolon powers the platform’s **RAG pipeline** (Retrieval-Augmented Generation), enabling traceable debugging across incidents, CI/CD logs, and infrastructure events.
+
+Together, AetherFi + Eidolon follow a **retrieval-first architecture**, combining:
+- **ETL pipelines** for structured ingestion,
+- **RAGOps** patterns for monitoring AI workflows, and
+- **RAR feedback loops** (Retrieval-Augmented Reasoning) for explainable decision-making.
+
+This design prioritizes **auditability, low-latency resolution**, and **human-in-the-loop moderation** via tools like Slack and Notion | Jira (planned).
 
 ---
 
