@@ -129,7 +129,8 @@ The architecture supports both:
 This dual-mode design allows AetherFi to balance speed with depth, supporting both instant answers and nuanced, human-grade debugging insights.
 
 <img src="./assets/aetherfi-ai-agent_architecturev2.png" alt="AetherFi AI Agent Orchestration" width="50%" />
-> Illustrates a full pipeline from GitLab webhook trigger → AI agent analysis → human-in-the-loop notification with Slack and GitLab integration.
+
+> Depicts the core AI triage flow from GitLab → Redis → Java orchestrator → Claude → Slack/GitLab. This is the heartbeat of the RAG/RAR triage system.
 
 ---
 
@@ -171,10 +172,9 @@ This dual-mode design allows AetherFi to balance speed with depth, supporting bo
 --- 
 
 #### 🧠 Full AI Agent System Flow
+<img src="./assets/aetherfi-ai-agents-full-arch-diagram.png" alt="AetherFi Full Agent System Diagram" width="80%" />
 
-<img src="./assets/aetherfi-ai-agent_architecturev2.png" alt="Full System Architecture: GitLab + AWS → AI Agent Orchestration → Slack/Notion" width="800"/>
-
-> Demonstrates the system-wide interaction of GitLab, AWS, Datadog, Notion, and Slack with various agents coordinating event-driven debugging.
+> Shows full system orchestration: GitLab CI/CD failures, AWS budget alerts, and Datadog incidents trigger specialized agents. Events are routed through the orchestrator, logged in Notion, and optionally surfaced via Slack with reasoning powered by Claude.
 
 ---
 
