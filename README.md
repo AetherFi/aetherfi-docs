@@ -118,7 +118,7 @@ This simulated panel summarizes pipeline outcomes and response time across incid
 
 * 📐 [System Architecture](docs/ARCHITECTURE.md)
 * 🧱 [Dependency Injection Overview](docs/DI_OVERVIEW.md)
-* 🗃️ [Flyway Migration Guide](docs/MIGRATIONS.md)
+* 🗃️ [Flyway Migration Guide](docs/Flyway_Migration_Guide.md)
 * 🧪 [E2E Test Architecture](docs/TESTING.md)
 * 🧭 [SDLC Plan](docs/SDLC_PLAN.md)
 * 📘 RAGOps Overview
